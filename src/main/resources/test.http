@@ -1,0 +1,13 @@
+POST http://localhost:8084/user/CreateWithList
+Content-Type: application/json
+
+{
+  "username": "Hunter",
+  "firstName": "Ilea",
+  "lastName": "Aheyeu",
+  "email": "isethesal@gmail.com",
+  "password": "12345",
+  "phone": "+375291235151"
+}
+
+###

@@ -14,7 +14,7 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+public class OrderPet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
