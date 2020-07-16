@@ -21,6 +21,8 @@ public class Pet {
     @ManyToOne
     private Category category;
 
+    private String name;
+
     @OneToMany
     private List<Tag> tags;
 

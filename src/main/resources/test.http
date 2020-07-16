@@ -1,13 +1,46 @@
-POST http://localhost:8084/user/CreateWithList
+POST http://localhost:8084/user/createWithList
 Content-Type: application/json
 
 {
-  "username": "Hunter",
+  "username": "Ilea",
   "firstName": "Ilea",
   "lastName": "Aheyeu",
   "email": "isethesal@gmail.com",
   "password": "12345",
   "phone": "+375291235151"
 }
+
+###
+GET http://localhost:8084/user/getById?id=4
+
+###
+
+
+GET http://localhost:8084/user/getByUsername?username=Ilea
+
+###
+
+POST http://localhost:8084/pet/add
+Content-Type: application/json
+
+{
+  "category": {
+    "name": "cat"
+  },
+  "name": "Alice",
+  "tags": [
+    {
+      "name": "alive"
+    },
+    {
+      "name": "new"
+    }
+  ],
+  "petStatus": "Sold"
+}
+
+###
+
+DELETE http://localhost:8084/pet/deletePetById?id=1
 
 ###
