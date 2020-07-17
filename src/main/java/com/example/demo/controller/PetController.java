@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,12 +21,12 @@ public class PetController {
     private final PetService petService;
 
     @PostMapping(path = "/add")
-    public ResponseEntity<Pet> add(@RequestBody Pet pet) {
+    public ResponseEntity<Pet> add(@Valid @RequestBody Pet pet) {
         return new ResponseEntity<>(petService.add(pet));
     }
 
     @GetMapping(path = "/findByStatus")
-    public ResponseEntity<List<Pet>> findByStatus(@RequestParam PetStatus status) {
+    public ResponseEntity<List<Pet>> findByStatus(@Valid @RequestParam PetStatus status) {
         return new ResponseEntity<>(petService.findByStatus(status), HttpStatus.OK);
     }
 
@@ -36,7 +37,7 @@ public class PetController {
 
 
     @PostMapping(path = "/updatePetCategoryAndStatusById")
-    public ResponseEntity<Pet> updatePetCategoryAndStatusById(@RequestParam Integer id, @RequestBody Pet pet){
+    public ResponseEntity<Pet> updatePetCategoryAndStatusById(@RequestParam Integer id,@Valid @RequestBody Pet pet){
         return new ResponseEntity<>(petService.updatePetCategoryAndStatusById(id, pet));
     }
 

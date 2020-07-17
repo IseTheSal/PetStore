@@ -4,21 +4,27 @@ package com.example.demo.service;
 import com.example.demo.domain.User;
 import com.example.demo.repository.UserRepository;
 import lombok.Data;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Data
 @Service
 public class UserService {
 
     private final UserRepository userRepository;
+    private final List<UUID> list;
 
     public HttpStatus createWithArray(User user) {
         userRepository.save(user);
         return HttpStatus.CREATED;
+    }
+
+    public void saveUUID(UUID uuid) {
+        list.add(uuid);
     }
 
     public HttpStatus createWithList(User user) {
@@ -43,8 +49,8 @@ public class UserService {
         return userRepository.findByUsernameAndPassword(username, password);
     }
 
-    public Optional<User> findUserById(Integer id){
-        return  userRepository.findById(id);
+    public Optional<User> findUserById(Integer id) {
+        return userRepository.findById(id);
     }
 
     //TODO

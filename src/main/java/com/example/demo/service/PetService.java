@@ -21,7 +21,6 @@ public class PetService {
     private final PetRepository petRepository;
     private final CategoryRepository categoryRepository;
     private final TagRepository tagRepository;
-    //FIXME
 
     public HttpStatus add(Pet pet) {
         tagRepository.saveAll(pet.getTags());
